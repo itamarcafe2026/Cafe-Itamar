@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0045)file:///C:/Users/Omri/Downloads/index_12.html -->
+<html lang="he" dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -362,11 +362,11 @@
 </header>
 
 <nav class="nav">
-  <button class="nav-btn active" onclick="showTab('entry',this)">הזנה</button>
-  <button class="nav-btn" onclick="showTab('xz',this)">X/Z יומי</button>
-  <button class="nav-btn" onclick="showTab('ledger',this)">מאזן</button>
-  <button class="nav-btn" onclick="showTab('analysis',this)">ניתוח</button>
-  <button class="nav-btn" onclick="showTab('settings',this)">הגדרות</button>
+  <button class="nav-btn active" onclick="showTab(&#39;entry&#39;,this)">הזנה</button>
+  <button class="nav-btn" onclick="showTab(&#39;xz&#39;,this)">X/Z יומי</button>
+  <button class="nav-btn" onclick="showTab(&#39;ledger&#39;,this)">מאזן</button>
+  <button class="nav-btn" onclick="showTab(&#39;analysis&#39;,this)">ניתוח</button>
+  <button class="nav-btn" onclick="showTab(&#39;settings&#39;,this)">הגדרות</button>
 </nav>
 
 <div class="content">
@@ -375,15 +375,15 @@
 <div id="tab-entry" class="section active">
 
   <div class="type-toggle">
-    <button class="type-btn act-exp" id="btn-exp" onclick="setType('expense')">הוצאה</button>
-    <button class="type-btn" id="btn-inc" onclick="setType('income')">הכנסה</button>
+    <button class="type-btn act-exp" id="btn-exp" onclick="setType(&#39;expense&#39;)">הוצאה</button>
+    <button class="type-btn" id="btn-inc" onclick="setType(&#39;income&#39;)">הכנסה</button>
   </div>
 
   <div class="card">
     <div class="card-title">מי ביצע?</div>
     <div class="who-row">
-      <button class="who-btn" id="who-רוז" onclick="selWho('רוז')">רוז</button>
-      <button class="who-btn" id="who-אפרת" onclick="selWho('אפרת')">אפרת</button>
+      <button class="who-btn" id="who-רוז" onclick="selWho(&#39;רוז&#39;)">רוז</button>
+      <button class="who-btn" id="who-אפרת" onclick="selWho(&#39;אפרת&#39;)">אפרת</button>
     </div>
   </div>
 
@@ -391,48 +391,44 @@
     <div class="card-title" id="cat-title">קטגוריה</div>
     <div id="expense-cats">
       <div class="cat-grid">
-        <button class="cat-btn" onclick="selCat('קפה',this)">☕ קפה</button>
-        <button class="cat-btn" onclick="selCat('חד פעמי',this)">🥤 חד פעמי</button>
-        <button class="cat-btn has-sub" onclick="toggleSub('גלם',this)">🧺 חומרי גלם</button>
-        <button class="cat-btn" onclick="selCat('עלויות מקום',this)">🏠 עלויות מקום</button>
-        <button class="cat-btn" onclick="selCat('תפעול ושיווק',this)">📢 תפעול ושיווק</button>
-        <button class="cat-btn has-sub" onclick="toggleSub('שונות',this)">📋 שונות</button>
+        <button class="cat-btn" onclick="selCat(&#39;קפה&#39;,this)">☕ קפה</button>
+        <button class="cat-btn" onclick="selCat(&#39;חד פעמי&#39;,this)">🥤 חד פעמי</button>
+        <button class="cat-btn has-sub" onclick="toggleSub(&#39;גלם&#39;,this)">🧺 חומרי גלם</button>
+        <button class="cat-btn" onclick="selCat(&#39;עלויות מקום&#39;,this)">🏠 עלויות מקום</button>
+        <button class="cat-btn" onclick="selCat(&#39;תפעול ושיווק&#39;,this)">📢 תפעול ושיווק</button>
+        <button class="cat-btn has-sub" onclick="toggleSub(&#39;שונות&#39;,this)">📋 שונות</button>
       </div>
       <div class="sub-panel" id="sub-גלם">
-        <button class="sub-btn" onclick="selSub('חומרי גלם','מאפים',this)">מאפים</button>
-        <button class="sub-btn" onclick="selSub('חומרי גלם','סלטים',this)">סלטים</button>
-        <button class="sub-btn" onclick="selSub('חומרי גלם','תמציות תה',this)">תמציות תה</button>
-        <button class="sub-btn" onclick="selSub('חומרי גלם','קינוחים',this)">קינוחים</button>
-        <button class="sub-btn" onclick="selSub('חומרי גלם','מיצים וסחוטים',this)">מיצים וסחוטים</button>
-        <button class="sub-btn" onclick="selSub('חומרי גלם','ירקות',this)">ירקות</button>
-        <button class="sub-btn" onclick="selSub('חומרי גלם','רכש השלמה',this)">רכש השלמה</button>
+        <button class="sub-btn" onclick="selSub(&#39;חומרי גלם&#39;,&#39;מאפים&#39;,this)">מאפים</button>
+        <button class="sub-btn" onclick="selSub(&#39;חומרי גלם&#39;,&#39;סלטים&#39;,this)">סלטים</button>
+        <button class="sub-btn" onclick="selSub(&#39;חומרי גלם&#39;,&#39;תמציות תה&#39;,this)">תמציות תה</button>
+        <button class="sub-btn" onclick="selSub(&#39;חומרי גלם&#39;,&#39;קינוחים&#39;,this)">קינוחים</button>
+        <button class="sub-btn" onclick="selSub(&#39;חומרי גלם&#39;,&#39;מיצים וסחוטים&#39;,this)">מיצים וסחוטים</button>
+        <button class="sub-btn" onclick="selSub(&#39;חומרי גלם&#39;,&#39;ירקות&#39;,this)">ירקות</button>
+        <button class="sub-btn" onclick="selSub(&#39;חומרי גלם&#39;,&#39;רכש השלמה&#39;,this)">רכש השלמה</button>
       </div>
       <div class="sub-panel" id="sub-שונות">
-        <button class="sub-btn" onclick="selSub('שונות','עגלה ורכש ראשוני',this)">עגלה ורכש ראשוני</button>
-        <button class="sub-btn" onclick="selSub('שונות','גרפיקה ומיתוג',this)">גרפיקה ומיתוג</button>
-        <button class="sub-btn" onclick="selSub('שונות','רישוי וכשרות',this)">רישוי וכשרות</button>
-        <button class="sub-btn" onclick="selSub('שונות','ביטוחים ורישיון',this)">ביטוחים ורישיון</button>
-        <button class="sub-btn" onclick="selSub('שונות','הנהלת חשבונות',this)">הנהלת חשבונות</button>
+        <button class="sub-btn" onclick="selSub(&#39;שונות&#39;,&#39;עגלה ורכש ראשוני&#39;,this)">עגלה ורכש ראשוני</button>
+        <button class="sub-btn" onclick="selSub(&#39;שונות&#39;,&#39;גרפיקה ומיתוג&#39;,this)">גרפיקה ומיתוג</button>
+        <button class="sub-btn" onclick="selSub(&#39;שונות&#39;,&#39;רישוי וכשרות&#39;,this)">רישוי וכשרות</button>
+        <button class="sub-btn" onclick="selSub(&#39;שונות&#39;,&#39;ביטוחים ורישיון&#39;,this)">ביטוחים ורישיון</button>
+        <button class="sub-btn" onclick="selSub(&#39;שונות&#39;,&#39;הנהלת חשבונות&#39;,this)">הנהלת חשבונות</button>
       </div>
     </div>
     <div id="income-cats" style="display:none">
       <div class="cat-grid">
-        <button class="cat-btn" onclick="selCat('מכירות יומיות',this)">💰 מכירות יומיות</button>
-        <button class="cat-btn" onclick="selCat('מכירה לקבוצות',this)">👥 מכירה לקבוצות</button>
-        <button class="cat-btn" onclick="selCat('אירועים מיוחדים',this)">🎉 אירועים מיוחדים</button>
-        <button class="cat-btn" onclick="selCat('הכנסות אחרות',this)">📥 הכנסות אחרות</button>
+        <button class="cat-btn" onclick="selCat(&#39;מכירות יומיות&#39;,this)">💰 מכירות יומיות</button>
+        <button class="cat-btn" onclick="selCat(&#39;מכירה לקבוצות&#39;,this)">👥 מכירה לקבוצות</button>
+        <button class="cat-btn" onclick="selCat(&#39;אירועים מיוחדים&#39;,this)">🎉 אירועים מיוחדים</button>
+        <button class="cat-btn" onclick="selCat(&#39;הכנסות אחרות&#39;,this)">📥 הכנסות אחרות</button>
       </div>
     </div>
   </div>
 
   <div class="card">
     <div class="card-title">העלאת חשבונית / קבלה</div>
-    <div class="upload-zone" id="upload-zone"
-      onclick="document.getElementById('file-input').click()"
-      ondragover="ev.preventDefault();this.classList.add('dragover')"
-      ondrop="handleDrop(event)"
-      ondragleave="this.classList.remove('dragover')">
-      <img id="preview-img" class="preview-img" />
+    <div class="upload-zone" id="upload-zone" onclick="document.getElementById(&#39;file-input&#39;).click()" ondragover="ev.preventDefault();this.classList.add(&#39;dragover&#39;)" ondrop="handleDrop(event)" ondragleave="this.classList.remove(&#39;dragover&#39;)">
+      <img id="preview-img" class="preview-img">
       <div id="upload-ph">
         <div class="upload-icon">📄</div>
         <div class="upload-text">צלם או העלה חשבונית / קבלה</div>
@@ -451,31 +447,31 @@
     <div class="row-2">
       <div class="field">
         <label>תאריך</label>
-        <input type="date" id="f-date" />
+        <input type="date" id="f-date">
       </div>
       <div class="field">
         <label>ספק / מקור</label>
-        <input type="text" id="f-supplier" placeholder="שם הספק" />
+        <input type="text" id="f-supplier" placeholder="שם הספק">
       </div>
     </div>
     <div class="row-3">
       <div class="field">
         <label>לפני מע"מ (₪)</label>
-        <input type="number" id="f-net" placeholder="0.00" step="0.01" inputmode="decimal" oninput="calcVat()" />
+        <input type="number" id="f-net" placeholder="0.00" step="0.01" inputmode="decimal" oninput="calcVat()">
       </div>
       <div class="field">
         <label>מע"מ (₪)</label>
-        <input type="number" id="f-vat" placeholder="0.00" step="0.01" inputmode="decimal" oninput="calcTotal()" />
+        <input type="number" id="f-vat" placeholder="0.00" step="0.01" inputmode="decimal" oninput="calcTotal()">
       </div>
       <div class="field">
         <label>סה"כ (₪)</label>
-        <input type="number" id="f-total" placeholder="0.00" step="0.01" inputmode="decimal" oninput="calcFromTotal()" />
+        <input type="number" id="f-total" placeholder="0.00" step="0.01" inputmode="decimal" oninput="calcFromTotal()">
       </div>
     </div>
     <div class="row-2">
       <div class="field">
         <label>מס' חשבונית</label>
-        <input type="text" id="f-inv" placeholder="אופציונלי" inputmode="numeric" />
+        <input type="text" id="f-inv" placeholder="אופציונלי" inputmode="numeric">
       </div>
       <div class="field">
         <label>סטטוס</label>
@@ -490,11 +486,11 @@
     <div class="field">
       <label>אמצעי תשלום</label>
       <div class="pay-row" id="pay-row">
-        <button class="pay-btn" onclick="selPay('מזומן',this)">מזומן</button>
-        <button class="pay-btn" onclick="selPay('אשראי',this)">אשראי</button>
-        <button class="pay-btn" onclick="selPay('ביט',this)">ביט</button>
-        <button class="pay-btn" onclick="selPay('פייבוקס',this)">פייבוקס</button>
-        <button class="pay-btn" onclick="selPay('העברה בנקאית',this)">העברה בנקאית</button>
+        <button class="pay-btn" onclick="selPay(&#39;מזומן&#39;,this)">מזומן</button>
+        <button class="pay-btn" onclick="selPay(&#39;אשראי&#39;,this)">אשראי</button>
+        <button class="pay-btn" onclick="selPay(&#39;ביט&#39;,this)">ביט</button>
+        <button class="pay-btn" onclick="selPay(&#39;פייבוקס&#39;,this)">פייבוקס</button>
+        <button class="pay-btn" onclick="selPay(&#39;העברה בנקאית&#39;,this)">העברה בנקאית</button>
       </div>
     </div>
     <div class="field">
@@ -511,7 +507,7 @@
   <div class="card">
     <div class="card-title">דוח קופה יומי X/Z</div>
     <div class="row-2">
-      <div class="field"><label>תאריך</label><input type="date" id="xz-date" /></div>
+      <div class="field"><label>תאריך</label><input type="date" id="xz-date"></div>
       <div class="field"><label>סוג דוח</label>
         <select id="xz-type">
           <option value="Z">דוח Z – סגירת יום</option>
@@ -520,13 +516,13 @@
       </div>
     </div>
     <div class="xz-row">
-      <div class="field"><label>מזומן (₪)</label><input type="number" id="xz-cash" placeholder="0" inputmode="decimal" oninput="calcXZ()" /></div>
-      <div class="field"><label>אשראי (₪)</label><input type="number" id="xz-credit" placeholder="0" inputmode="decimal" oninput="calcXZ()" /></div>
-      <div class="field"><label>ביט / פייבוקס (₪)</label><input type="number" id="xz-bit" placeholder="0" inputmode="decimal" oninput="calcXZ()" /></div>
+      <div class="field"><label>מזומן (₪)</label><input type="number" id="xz-cash" placeholder="0" inputmode="decimal" oninput="calcXZ()"></div>
+      <div class="field"><label>אשראי (₪)</label><input type="number" id="xz-credit" placeholder="0" inputmode="decimal" oninput="calcXZ()"></div>
+      <div class="field"><label>ביט / פייבוקס (₪)</label><input type="number" id="xz-bit" placeholder="0" inputmode="decimal" oninput="calcXZ()"></div>
     </div>
     <div class="xz-total-box">
       <div class="xz-box"><label>סה"כ מכירות</label><div class="xz-val" id="xz-total-val">₪0</div></div>
-      <div class="xz-box"><label>מספר עסקאות</label><input type="number" id="xz-count" placeholder="0" inputmode="numeric" style="font-size:20px;font-weight:700;border:none;background:none;width:100%;padding:2px 0;color:var(--income)" /></div>
+      <div class="xz-box"><label>מספר עסקאות</label><input type="number" id="xz-count" placeholder="0" inputmode="numeric" style="font-size:20px;font-weight:700;border:none;background:none;width:100%;padding:2px 0;color:var(--income)"></div>
     </div>
     <div class="field mt12"><label>הערות</label><textarea id="xz-notes" placeholder="אירועים מיוחדים, ביטולים..."></textarea></div>
     <button class="submit-btn inc mt8" onclick="submitXZ()">שמור דוח יומי</button>
@@ -549,7 +545,7 @@
     <select id="fl-month" onchange="renderLedger()">
       <option value="">כל החודשים</option>
     </select>
-    <input type="text" id="fl-search" placeholder="🔍 חיפוש..." oninput="renderLedger()" />
+    <input type="text" id="fl-search" placeholder="🔍 חיפוש..." oninput="renderLedger()">
   </div>
   <div class="tx-list" id="tx-list"></div>
   <div style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:10px" id="ledger-count"></div>
@@ -584,8 +580,8 @@
 <div id="tab-settings" class="section">
   <div class="card">
     <div class="card-title">חיבור Google Sheets</div>
-    <div class="field"><label>Spreadsheet ID</label><input type="text" id="gs-id" placeholder="החלק שבין /d/ ל-/edit בURL" /></div>
-    <div class="field"><label>Google API Key</label><input type="password" id="gs-key" placeholder="מפתח API" /></div>
+    <div class="field"><label>Spreadsheet ID</label><input type="text" id="gs-id" placeholder="החלק שבין /d/ ל-/edit בURL"></div>
+    <div class="field"><label>Google API Key</label><input type="password" id="gs-key" placeholder="מפתח API"></div>
     <button onclick="saveGS()" style="padding:11px 20px;border:1.5px solid var(--border);border-radius:10px;background:var(--surface);font-size:14px;font-family:inherit;cursor:pointer;color:var(--text)">שמור חיבור</button>
     <div class="gs-status no" id="gs-status"><div class="status-dot"></div><span id="gs-txt">לא מחובר</span></div>
     <p class="note">ליצירת גיליון: פתח Google Sheets ← שתף כ"כל מי שיש קישור יכול לערוך" ← העתק את ה-ID מה-URL (בין /d/ ל-/edit)</p>
@@ -595,9 +591,9 @@
     <div style="display:flex;gap:8px;flex-wrap:wrap">
       <button onclick="exportCSV()" style="padding:11px 16px;border:1.5px solid var(--border);border-radius:10px;background:var(--surface);font-size:14px;font-family:inherit;cursor:pointer;color:var(--text)">ייצוא CSV</button>
       <button onclick="exportJSON()" style="padding:11px 16px;border:1.5px solid var(--border);border-radius:10px;background:var(--surface);font-size:14px;font-family:inherit;cursor:pointer;color:var(--text)">ייצוא JSON</button>
-      <button onclick="document.getElementById('imp-file').click()" style="padding:11px 16px;border:1.5px solid var(--border);border-radius:10px;background:var(--surface);font-size:14px;font-family:inherit;cursor:pointer;color:var(--text)">ייבוא גיבוי</button>
+      <button onclick="document.getElementById(&#39;imp-file&#39;).click()" style="padding:11px 16px;border:1.5px solid var(--border);border-radius:10px;background:var(--surface);font-size:14px;font-family:inherit;cursor:pointer;color:var(--text)">ייבוא גיבוי</button>
     </div>
-    <input type="file" id="imp-file" accept=".json" style="display:none" onchange="doImport(this)" />
+    <input type="file" id="imp-file" accept=".json" style="display:none" onchange="doImport(this)">
   </div>
   <div class="card">
     <div class="card-title">נתונים מקומיים</div>
@@ -612,7 +608,7 @@
 
 <script>
 let entries = JSON.parse(localStorage.getItem('cis_v1') || '[]');
-let gsConfig = JSON.parse(localStorage.getItem('cis_gs') || '{}');
+let gsConfig = { id: "16R1wzN5SSEDmG5gKz3k7tjA9_uisKVqDOLk5w79GW-4", key: "AIzaSyCIQg_3D76vJXGW_oDA8K_igaTkuzZAE0E" };
 let currentType = 'expense';
 let selCatVal = '', selSubVal = '', selWhoVal = '', selPayVal = '';
 
@@ -834,6 +830,7 @@ function resetForm() {
   document.querySelectorAll('.pay-btn').forEach(b => b.classList.remove('selected'));
   ['f-date','f-supplier','f-net','f-vat','f-total','f-inv','f-notes'].forEach(id => document.getElementById(id).value = '');
   document.getElementById('f-date').value = today();
+syncFromSheets();
   document.getElementById('f-status').value = 'שולם';
   document.getElementById('preview-img').style.display = 'none';
   document.getElementById('preview-img').src = '';
@@ -935,11 +932,9 @@ function renderSettings() {
   document.getElementById('local-stats').textContent =
     entries.length + ' תנועות שמורות | הכנסות: ₪' + Math.round(ti).toLocaleString('he-IL') +
     ' | הוצאות: ₪' + Math.round(te).toLocaleString('he-IL');
-  if (gsConfig.id) {
-    document.getElementById('gs-id').value = gsConfig.id;
-    document.getElementById('gs-status').className = 'gs-status ok';
-    document.getElementById('gs-txt').textContent = 'מחובר';
-  }
+  document.getElementById('gs-id').value = gsConfig.id;
+  document.getElementById('gs-status').className = 'gs-status ok';
+  document.getElementById('gs-txt').textContent = 'מחובר לגיליון משותף';
 }
 
 function saveGS() {
@@ -957,9 +952,9 @@ async function appendToSheets(entry) {
   if (!gsConfig.id || !gsConfig.key) return;
   const row = [entry.date, entry.type, entry.cat, entry.subcat || '', entry.supplier,
                entry.who, entry.pay, entry.net, entry.vat, entry.total,
-               entry.inv, entry.status, entry.notes];
+               entry.inv, entry.status, entry.id];
   try {
-    await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${gsConfig.id}/values/תנועות!A:M:append?valueInputOption=RAW&key=${gsConfig.key}`, {
+    await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${gsConfig.id}/values/Sheet1!A:M:append?valueInputOption=RAW&key=${gsConfig.key}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ values: [row] })
@@ -1000,9 +995,35 @@ function formatDate(d) { if (!d) return ''; const p = d.split('-'); return p[2] 
 function formatMonth(m) { const [y, mo] = m.split('-'); const names = ['','ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר']; return names[parseInt(mo)] + ' ' + y; }
 function toast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 2800); }
 
+// ---- SYNC FROM SHEETS ----
+async function syncFromSheets() {
+  if (!gsConfig.id || !gsConfig.key) return;
+  try {
+    const resp = await fetch(
+      `https://sheets.googleapis.com/v4/spreadsheets/${gsConfig.id}/values/Sheet1!A2:M5000?key=${gsConfig.key}`
+    );
+    const data = await resp.json();
+    const rows = data.values || [];
+    if (!rows.length) return;
+    const remote = rows.map((r, i) => ({
+      id: parseInt(r[12]) || (Date.now() + i),
+      date: r[0]||'', type: r[1]||'', cat: r[2]||'', subcat: r[3]||'',
+      supplier: r[4]||'', who: r[5]||'', pay: r[6]||'',
+      net: parseFloat(r[7])||0, vat: parseFloat(r[8])||0, total: parseFloat(r[9])||0,
+      inv: r[10]||'', status: r[11]||'', notes: r[12]||''
+    }));
+    // merge: keep local entries not yet in remote, plus all remote
+    const remoteIds = new Set(remote.map(e => e.id));
+    const localOnly = entries.filter(e => !remoteIds.has(e.id));
+    entries = [...remote, ...localOnly].sort((a,b) => b.id - a.id);
+    saveLocal();
+  } catch(e) { console.log('sync error', e); }
+}
+
 // ---- INIT ----
 document.getElementById('f-date').value = today();
 document.getElementById('xz-date').value = today();
 </script>
-</body>
-</html>
+
+
+</body></html>
