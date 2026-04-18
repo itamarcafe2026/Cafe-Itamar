@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)file:///C:/Users/Omri/Downloads/index_12.html -->
+<!-- saved from url=(0045)file:///C:/Users/Omri/Downloads/index_17.html -->
 <html lang="he" dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -608,7 +608,7 @@
 
 <script>
 let entries = JSON.parse(localStorage.getItem('cis_v1') || '[]');
-let gsConfig = { id: "16R1wzN5SSEDmG5gKz3k7tjA9_uisKVqDOLk5w79GW-4", key: "AIzaSyCIQg_3D76vJXGW_oDA8K_igaTkuzZAE0E" };
+let gsConfig = { scriptUrl: 'https://script.google.com/macros/s/AKfycbzMYVnm3BvIxmfpdWSe6Rhep_6mcu3gq_QJJw1YV_T7_57sOwPUAbqnTC561jTWd6-tbQ/exec' };
 let currentType = 'expense';
 let selCatVal = '', selSubVal = '', selWhoVal = '', selPayVal = '';
 
@@ -932,7 +932,6 @@ function renderSettings() {
   document.getElementById('local-stats').textContent =
     entries.length + ' תנועות שמורות | הכנסות: ₪' + Math.round(ti).toLocaleString('he-IL') +
     ' | הוצאות: ₪' + Math.round(te).toLocaleString('he-IL');
-  document.getElementById('gs-id').value = gsConfig.id;
   document.getElementById('gs-status').className = 'gs-status ok';
   document.getElementById('gs-txt').textContent = 'מחובר לגיליון משותף';
 }
@@ -949,17 +948,40 @@ function saveGS() {
 }
 
 async function appendToSheets(entry) {
-  if (!gsConfig.id || !gsConfig.key) return;
+  if (!gsConfig.scriptUrl) return;
   const row = [entry.date, entry.type, entry.cat, entry.subcat || '', entry.supplier,
                entry.who, entry.pay, entry.net, entry.vat, entry.total,
-               entry.inv, entry.status, entry.id];
+               entry.inv, entry.status, String(entry.id), entry.notes];
   try {
-    await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${gsConfig.id}/values/Sheet1!A:M:append?valueInputOption=RAW&key=${gsConfig.key}`, {
+    await fetch(gsConfig.scriptUrl, {
       method: 'POST',
+      mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ values: [row] })
+      body: JSON.stringify({ row })
     });
-  } catch(e) {}
+  } catch(e) { console.log('sheets write error', e); }
+}
+
+async function syncFromSheets() {
+  if (!gsConfig.scriptUrl) return;
+  try {
+    const resp = await fetch(gsConfig.scriptUrl);
+    const data = await resp.json();
+    const rows = (data.values || []).slice(1); // skip header row
+    if (!rows.length) return;
+    const remote = rows.filter(r => r[0]).map(r => ({
+      id: parseInt(r[12]) || Date.now(),
+      date: r[0]||'', type: r[1]||'', cat: r[2]||'', subcat: r[3]||'',
+      supplier: r[4]||'', who: r[5]||'', pay: r[6]||'',
+      net: parseFloat(r[7])||0, vat: parseFloat(r[8])||0, total: parseFloat(r[9])||0,
+      inv: r[10]||'', status: r[11]||'', notes: r[13]||''
+    }));
+    const remoteIds = new Set(remote.map(e => e.id));
+    const localOnly = entries.filter(e => !remoteIds.has(e.id));
+    entries = [...remote, ...localOnly].sort((a,b) => b.id - a.id);
+    saveLocal();
+    console.log('synced', entries.length, 'entries');
+  } catch(e) { console.log('sync error', e); }
 }
 
 // ---- EXPORT / IMPORT ----
@@ -994,31 +1016,6 @@ function thisMonth() { return new Date().toISOString().slice(0, 7); }
 function formatDate(d) { if (!d) return ''; const p = d.split('-'); return p[2] + '/' + p[1] + '/' + p[0].slice(2); }
 function formatMonth(m) { const [y, mo] = m.split('-'); const names = ['','ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר']; return names[parseInt(mo)] + ' ' + y; }
 function toast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 2800); }
-
-// ---- SYNC FROM SHEETS ----
-async function syncFromSheets() {
-  if (!gsConfig.id || !gsConfig.key) return;
-  try {
-    const resp = await fetch(
-      `https://sheets.googleapis.com/v4/spreadsheets/${gsConfig.id}/values/Sheet1!A2:M5000?key=${gsConfig.key}`
-    );
-    const data = await resp.json();
-    const rows = data.values || [];
-    if (!rows.length) return;
-    const remote = rows.map((r, i) => ({
-      id: parseInt(r[12]) || (Date.now() + i),
-      date: r[0]||'', type: r[1]||'', cat: r[2]||'', subcat: r[3]||'',
-      supplier: r[4]||'', who: r[5]||'', pay: r[6]||'',
-      net: parseFloat(r[7])||0, vat: parseFloat(r[8])||0, total: parseFloat(r[9])||0,
-      inv: r[10]||'', status: r[11]||'', notes: r[12]||''
-    }));
-    // merge: keep local entries not yet in remote, plus all remote
-    const remoteIds = new Set(remote.map(e => e.id));
-    const localOnly = entries.filter(e => !remoteIds.has(e.id));
-    entries = [...remote, ...localOnly].sort((a,b) => b.id - a.id);
-    saveLocal();
-  } catch(e) { console.log('sync error', e); }
-}
 
 // ---- INIT ----
 document.getElementById('f-date').value = today();
